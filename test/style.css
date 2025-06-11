@@ -65,6 +65,10 @@ body {
 
   .header-center nav ul {
     padding-top: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    align-items: center;
   }
   
 }
@@ -145,13 +149,21 @@ body {
   }
 
   .hero-title {
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .hero-primary {
-    font-size: 1.5em;
+    font-size: 26px;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+  }
+
+  .hero-title p {
+    font-size: 16px;
   }
 
 }
@@ -159,15 +171,11 @@ body {
 
 /*----------Why Organics? Section----------*/
 .why-organics {
-  padding: 120px;
-}
-
-section {
   padding: 120px 80px;
-  line-height: 1.6;
+  line-height: 1.6 ;
 }
 
-.section-split {
+.wo-split {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -175,17 +183,17 @@ section {
   flex-wrap: wrap;
 }
 
-.section-split .text-content {
+.wo-split .text-content {
   flex: 1;
   min-width: 300px;
 }
 
-.section-split .image-content {
+.wo-split .image-content {
   flex: 1;
   min-width: 300px;
 }
 
-.section-split img {
+.wo-split img {
   width: 100%;
   border-radius: 10px;
 }
@@ -194,28 +202,30 @@ section {
   padding-top: 10px;
   display: flex;
   align-items: center;
+  text-align: justify;
 }
 
-.section-title {
+.wo-title {
   font-size: 2rem;
   color: green;
   margin-bottom: 1rem;
+  font-style: bold;
 }
 
-.section-description {
+.wo-description {
   font-size: 18px;
   text-align: justify;
 }
 
 
 @media screen and (max-width: 1200px) {
-  .section-split {
+  .wo-split {
     flex-direction: column;
     align-items: center;
   }
 
-  .section-split .text-content,
-  .section-split .image-content {
+  .wo-split .text-content,
+  .wo-split .image-content {
     flex: none;
     width: 100%;
   }
@@ -223,16 +233,16 @@ section {
 }
 
 @media screen and (max-width: 800px) {
-  section {
+  wo {
     padding: 60px 20px;
   }
 
-  .section-split {
+  .wo-split {
     padding: 40px;
   }
 
-  .section-split .text-content,
-  .section-split .image-content {
+  .wo-split .text-content,
+  .wo-split .image-content {
     width: 100%;
     text-align: center;
   }
@@ -244,6 +254,8 @@ section {
 
 .product-categories {
   background-color: rgb(194, 255, 186);
+  padding: 120px 80px;
+  line-height: 1.6 ;
 }
 
 .product-text {
@@ -284,7 +296,8 @@ section {
 }
 
 .card:hover {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
   transition: 0.6s;
   background-color: rgb(255, 248, 151);
 }
@@ -318,7 +331,6 @@ section {
   font-size: 0.9rem;
   color: rgb(0, 89, 255);
 }
-
 
 
 /* Footer */
@@ -440,4 +452,94 @@ footer {
 
 #scroll-to-top.show {
   display: block;
+}
+
+
+/*-------------------About Us Page------------------*/
+
+.about-us {
+  margin-top: 100px;
+  padding: 160px 80px;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(222, 255, 218);
+}
+
+.about-us-container {
+  text-align: center;
+  width: 60%;
+}
+
+.about-us-title {
+  font-size: 40px;
+  color: green;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about-us-description {
+  font-size: 18px;
+  color: #333;
+}
+
+.mission-vision {
+  padding: 120px 80px;
+  line-height: 1.6 ;
+}
+
+.mv-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.mv-split .mission-vision-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mv-split .mv-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.mv-split img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.mission{
+  padding: 40px;
+}
+
+.vision{
+  padding: 40px;
+}
+
+.v-title {
+  font-size: 28px;
+  color: green;
+  margin-bottom: 1rem;
+  font-style: bold;
+}
+
+.v-description {
+  font-size: 18px;
+  text-align: justify;
+}
+
+.m-title {
+  font-size: 28px;
+  color: green;
+  margin-bottom: 1rem;
+  font-style: bold;
+}
+
+.m-description {
+  font-size: 18px;
+  text-align: justify;
 }
