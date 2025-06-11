@@ -10,18 +10,20 @@ body {
   font-size: 18px;
 }
 
+/*----------Header----------*/
+
 #main-header {
   position: fixed;
   top: 0;
   width: 100%;
   transition: box-shadow 0.4s ease, backdrop-filter 0.8s ease-in-out, all 0.6s ease;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .header-scrolled {
   background: rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 12px rgb(0, 0, 0, 0.4);
-  backdrop-filter: blur(40px);
+  backdrop-filter: blur(10px);
 }
 
 .header-container {
@@ -55,6 +57,17 @@ body {
   color: red;
 }
 
+@media screen and (max-width: 800px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-center nav ul {
+    padding-top: 10px;
+  }
+  
+}
 
 /*----------Hero Section----------*/
 .hero {
@@ -91,7 +104,7 @@ body {
   background-position: center;
 }
 
-.header-title {
+.hero-title {
   z-index: 2;
   position: absolute;
   top: 50%;
@@ -99,20 +112,50 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.header-primary {
+.hero-primary {
   font-size: 2em;
   display: block;
   font-weight: 700;
   color: greenyellow;
 }
 
-.header-sub {
+.hero-sub {
   color: orange;
 }
 
-.header-title p {
+.hero-title p {
   text-transform: none;
 }
+
+@media screen and (max-width: 800px) {
+  .hero-center {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .hero-one {
+    width: 100%;
+    clip-path: none;
+  }
+
+  .hero-two {
+    display: none;
+  }
+
+  .hero-title {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-primary {
+    font-size: 1.5em;
+  }
+
+}
+
 
 /*----------Why Organics? Section----------*/
 .why-organics {
@@ -164,6 +207,39 @@ section {
   text-align: justify;
 }
 
+
+@media screen and (max-width: 1200px) {
+  .section-split {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-split .text-content,
+  .section-split .image-content {
+    flex: none;
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  section {
+    padding: 60px 20px;
+  }
+
+  .section-split {
+    padding: 40px;
+  }
+
+  .section-split .text-content,
+  .section-split .image-content {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
 /* Product Categories */
 
 .product-categories {
@@ -200,7 +276,7 @@ section {
   min-height: 400px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  transition: 0.8s;
+  transition: 0.6s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -208,8 +284,8 @@ section {
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  transition: 0.8s;
+  transform: translateY(-20px);
+  transition: 0.6s;
   background-color: rgb(255, 248, 151);
 }
 
@@ -237,7 +313,7 @@ section {
 
 .card ul {
   list-style: none;
-  padding: 0;
+  padding-top: 20px;
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: rgb(0, 89, 255);
