@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Naturezone Organics provides eco-friendly agricultural solutions including bio fertilizers, bio stimulants, plant nutrients, and protectants." />
+        content="Naturezone Organics provides eco-friendly agricultural solutions including Microbial, Nutrition, Bio Stimulants, and Specialty products." />
     <link rel="stylesheet" href="style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 
-    <title>Blog - Naturezone Organics</title>
+    <title>Products - Naturezone Organics</title>
     <link rel="icon" href="images/logo/NZ Leaf Logo.png" />
 </head>
 
@@ -30,7 +30,7 @@
                 </div>
             </div>
 
-            <div class="header-center">
+            <div class="header-right">
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -40,17 +40,28 @@
                         <li><a href="contactus.html">Contact</a></li>
                     </ul>
                 </nav>
+
+            </div>
+            <!-- Hamburger Menu Icon -->
+            <div class="mobile-menu-icon" id="mobile-menu-icon">
+                <i class='bx bx-menu'></i>
             </div>
 
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobile-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                </ul>
+            </div>
 
         </div>
     </header>
 
-
-
-
     <main>
-        
 
 
     </main>
@@ -61,9 +72,8 @@
             <div class="footer-about">
                 <img src="images/logo/NZ Logo.svg" alt="Naturezone Organics">
                 <p class="footer-description">
-                    Leading provider of premium organic agricultural solutions. We specialize in bio fertilizers, bio
-                    stimulants,
-                    plant nutrients, and plant protectants for sustainable and productive farming.
+                    Leading provider of premium organic agricultural solutions. We specialize in Microbial, Nutrition,
+                    Bio Stimulants, and Specialty Products for sustainable and productive farming.
                 </p>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/NaturezoneOrganics" target="_blank"><i
@@ -95,11 +105,16 @@
                 <h4 class="footer-title">Product Categories</h4>
                 <div class="footer-description">
                     <ul>
-                        <li><i class='bx bx-chevron-right'></i><a href="#">Bio Fertilizers</a></li>
-                        <li><i class='bx bx-chevron-right'></i><a href="#">Bio Stimulants</a></li>
-                        <li><i class='bx bx-chevron-right'></i><a href="#">Plant Nutrients</a></li>
-                        <li><i class='bx bx-chevron-right'></i><a href="#">Plant Protectants</a></li>
+                        <li><i class='bx bx-chevron-right'></i><a href="products.html?category=Microbial">Microbial</a>
+                        </li>
+                        <li><i class='bx bx-chevron-right'></i><a href="products.html?category=Nutrition">Nutrition</a>
+                        </li>
+                        <li><i class='bx bx-chevron-right'></i><a href="products.html?category=Bio Stimulants">Bio
+                                Stimulants</a></li>
+                        <li><i class='bx bx-chevron-right'></i><a href="products.html?category=Specialty">Specialty</a>
+                        </li>
                     </ul>
+
                 </div>
             </div>
 
@@ -124,29 +139,42 @@
     <!-----------------Scroll Button---------------------->
 
     <a href="#top" id="scroll-to-top"><i class='bx bxs-chevrons-up'
-            style="font-size: 28px; color: greenyellow;"></i></a>
+            style="font-size: 28px; color: rgb(255, 0, 0);"></i></a>
 
     <!---------------------JAVA Script---------------------------->
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
     <script>
-        // Add shadow to header on scroll
-        const header = document.getElementById("main-header");
+        // Toggle mobile nav
+        const menuIcon = document.getElementById('mobile-menu-icon');
+        const mobileNav = document.getElementById('mobile-nav');
 
-        function handleHeaderScroll() {
-            if (window.scrollY > 20) {
-                header.classList.add("header-scrolled");
-            } else {
-                header.classList.remove("header-scrolled");
+        menuIcon.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // Close menu if click outside menu and hamburger icon
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = mobileNav.contains(event.target);
+            const isClickOnIcon = menuIcon.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnIcon) {
+                mobileNav.classList.remove('active');
             }
-        }
-
-        // Attach scroll listener
-        window.addEventListener("scroll", handleHeaderScroll);
+        });
 
 
+    </script>
 
+    <script>
         //------------------------ // SCROLL TO TOP // ------------------------//
         window.onscroll = function () {
             if (
