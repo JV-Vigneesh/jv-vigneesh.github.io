@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JV Vigneesh - Project Details" />
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>JV Vigneesh - Project Details</title>
+
+    <style>
+        /* Custom Detail Page Styles */
+        .detail-body {
+            padding-top: 120px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            flex: 1;
+            width: 100%;
+        }
+
+        /* Back Button */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #b0b0b0;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .back-link i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+            border-color: rgba(255, 0, 85, 0.3);
+            background: rgba(255, 0, 85, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .back-link:hover i {
+            transform: translateX(-4px);
+        }
+
+        /* Header Section */
+        .project-detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 21, 119, 0.15);
+            padding-bottom: 40px;
+        }
+
+        .header-left {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .detail-tag {
+            display: inline-block;
+            background: rgba(255, 21, 119, 0.1);
+            border: 1px solid rgba(255, 21, 119, 0.3);
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .detail-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Meta Box Right */
+        .header-right {
+            background: rgba(255, 21, 119, 0.03);
+            border: 1px solid rgba(255, 21, 119, 0.15);
+            padding: 24px;
+            border-radius: 16px;
+            min-width: 280px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .meta-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        /* Detail Two-Column Content */
+        .detail-content-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        /* Preview Display Left */
+        .detail-preview-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .detail-image-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+            border: 1px solid rgba(255, 21, 119, 0.2);
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 50px rgba(255, 21, 119, 0.05);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .detail-image-wrapper:hover {
+            border-color: rgba(255, 21, 119, 0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 50px rgba(255, 21, 119, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .detail-image-wrapper img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .detail-image-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Image Gallery */
+        .screenshots-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .gallery-thumb {
+            border: 1px solid rgba(255, 21, 119, 0.15);
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #000;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .gallery-thumb img {
+            width: 100%;
+            display: block;
+            opacity: 0.7;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .gallery-thumb:hover {
+            border-color: var(--primary-color);
+            transform: scale(1.05) translateY(-4px);
+            box-shadow: 0 10px 25px rgba(255, 0, 85, 0.25);
+        }
+
+        .gallery-thumb:hover img {
+            opacity: 1;
+        }
+
+        /* Content Text Right */
+        .detail-info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .info-section:hover {
+            background: rgba(255, 21, 119, 0.02);
+            border-color: rgba(255, 21, 119, 0.25);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 21, 119, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .info-section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-section-title i {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(255, 0, 85, 0.4);
+        }
+
+        .detail-long-desc {
+            font-size: 15px;
+            color: #c0c0c0;
+            line-height: 1.7;
+        }
+
+        /* Features List */
+        .features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .features-list li {
+            position: relative;
+            padding-left: 32px;
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .features-list li:hover {
+            color: #ffffff;
+            transform: translateX(4px);
+        }
+
+        .features-list li::before {
+            content: "\eab2"; /* Boxicons check-circle icon unicode */
+            font-family: 'boxicons' !important;
+            position: absolute;
+            left: 0;
+            top: 1px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(255, 0, 85, 0.4);
+        }
+
+        /* Tech Stack Badges */
+        .detail-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .stack-badge {
+            background: rgba(255, 21, 119, 0.04);
+            border: 1px solid rgba(255, 21, 119, 0.15);
+            color: #ffffff;
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .stack-badge:hover {
+            background: rgba(255, 21, 119, 0.2);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 0, 85, 0.2);
+        }
+
+        /* Fallback 404 Panel */
+        .error-panel {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(255, 21, 119, 0.02);
+            border: 1px dashed rgba(255, 21, 119, 0.15);
+            border-radius: 24px;
+            max-width: 600px;
+            margin: 100px auto;
+        }
+
+        .error-panel i {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 24px;
+            opacity: 0.8;
+            display: block;
+        }
+
+        .error-panel h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .error-panel p {
+            color: #b0b0b0;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .detail-content-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .project-detail-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .header-right {
+                width: 100%;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .detail-title {
+                font-size: 36px;
+            }
+
+            .detail-browser-url {
+                width: 80%;
+            }
+
+            .screenshots-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="detail-body">
+    <!-- Navigation (Simple Shared styles header) -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html#home" class="logo"><span class="gradient-text">VV</span>J.</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#resume" class="nav-link">Resume</a></li>
+                    <li><a href="index.html#projects" class="nav-link active">Projects</a></li>
+                    <li><a href="index.html#work" class="nav-link">Work</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Detail Content -->
+    <main class="detail-container">
+        <!-- Back Link -->
+        <a href="index.html#projects" class="back-link">
+            <i class='bx bx-left-arrow-alt'></i> Back to Selected Work
+        </a>
+
+        <!-- Dynamically Loaded Content Area -->
+        <div id="project-detail-content" style="display: none;">
+            <!-- Header Grid -->
+            <div class="project-detail-header">
+                <div class="header-left">
+                    <span class="detail-tag" id="proj-tag">Category</span>
+                    <h1 class="detail-title" id="proj-title">Project Title</h1>
+                    <div class="header-buttons">
+                        <a href="#" id="proj-live-link" target="_blank" class="btn btn-primary btn-icon">
+                            <i class='bx bx-link-external'></i> View Live Project
+                        </a>
+                        <a href="#" id="proj-code-link" target="_blank" class="btn btn-secondary btn-icon">
+                            <i class='bx bxl-github'></i> View Source Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="meta-item">
+                        <span class="meta-label">ROLE</span>
+                        <span class="meta-value" id="proj-role">Developer & Designer</span>
+                    </div>
+                    <div class="meta-item" style="border-top: 1px solid rgba(255, 21, 119, 0.1); padding-top: 12px;">
+                        <span class="meta-label">DURATION</span>
+                        <span class="meta-value" id="proj-duration">2 Months</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two Column Details -->
+            <div class="detail-content-grid">
+                <!-- Visuals Left -->
+                <div class="detail-preview-container">
+                    <div class="detail-image-wrapper">
+                        <img src="" alt="Project Mockup" id="proj-main-image">
+                    </div>
+
+                    <!-- Visual Assets Gallery -->
+                    <div class="screenshots-gallery" id="proj-gallery">
+                        <!-- Thumbnail images injected dynamically -->
+                    </div>
+                </div>
+
+                <!-- Info Details Right -->
+                <div class="detail-info-container">
+                    <!-- About Section -->
+                    <div class="info-section">
+                        <h3 class="info-section-title">
+                            <i class='bx bx-info-circle'></i> About The Project
+                        </h3>
+                        <p class="detail-long-desc" id="proj-desc">Detailed project description goes here...</p>
+                    </div>
+
+                    <!-- Key Features -->
+                    <div class="info-section">
+                        <h3 class="info-section-title">
+                            <i class='bx bx-task'></i> Key Features & Deliverables
+                        </h3>
+                        <ul class="features-list" id="proj-features">
+                            <!-- Injected bullet points -->
+                        </ul>
+                    </div>
+
+                    <!-- Tech Stack & Tools -->
+                    <div class="info-section">
+                        <h3 class="info-section-title">
+                            <i class='bx bx-code-alt'></i> Technologies & Tools
+                        </h3>
+                        <div class="detail-stack" id="proj-stack">
+                            <!-- Injected stack tags -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sleek Error View (Initially Hidden) -->
+        <div id="project-error-content" class="error-panel animate__animated animate__fadeIn" style="display: none;">
+            <i class='bx bx-error-alt'></i>
+            <h2>Project Not Found</h2>
+            <p>The project you are looking for doesn't exist, has been archived, or was moved. Let's get you back on track!</p>
+            <a href="index.html#projects" class="btn btn-primary">
+                Return to Portfolio
+            </a>
+        </div>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="footer" style="margin-top: 80px; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 40px; padding-bottom: 40px;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.5);">
+            <p>&copy; 2026 JV Vigneesh. Crafted with obsession.</p>
+            <p>v2026.5 · designed & built from scratch</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="projects-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const detailContainer = document.getElementById('project-detail-content');
+            const errorContainer = document.getElementById('project-error-content');
+
+            // Parse project ID from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+
+            if (!projectId) {
+                errorContainer.style.display = 'block';
+                return;
+            }
+
+            // Find project inside shared projectsData array
+            const project = projectsData.find(p => p.id === projectId);
+
+            if (!project) {
+                errorContainer.style.display = 'block';
+                return;
+            }
+
+            // Set document title
+            document.title = `JV Vigneesh - ${project.title}`;
+
+            // Set tags & meta fields
+            document.getElementById('proj-tag').textContent = project.tag;
+            document.getElementById('proj-title').textContent = project.title;
+            document.getElementById('proj-role').textContent = project.role || 'Lead Developer & Designer';
+            document.getElementById('proj-duration').textContent = project.duration || '2 Months';
+
+            // Set links
+            const liveLink = document.getElementById('proj-live-link');
+            if (project.url && project.url !== '#') {
+                liveLink.href = project.url;
+                liveLink.style.display = 'inline-flex';
+            } else {
+                liveLink.style.display = 'none';
+            }
+
+            const codeLink = document.getElementById('proj-code-link');
+            if (project.githubUrl && project.githubUrl !== '#') {
+                codeLink.href = project.githubUrl;
+                codeLink.style.display = 'inline-flex';
+            } else {
+                codeLink.style.display = 'none';
+            }
+
+            // Set Browser Display URL
+            const displayUrl = project.url && project.url !== '#'
+                ? project.url.replace(/https?:\/\/(www\.)?/, '')
+                : `jv-vigneesh.github.io/${project.id}`;
+            const browserUrlEl = document.getElementById('proj-browser-url');
+            if (browserUrlEl) browserUrlEl.textContent = displayUrl;
+
+            // Set Images
+            const mainImg = document.getElementById('proj-main-image');
+            mainImg.src = project.image;
+            mainImg.alt = project.title;
+
+            // Load descriptive sections
+            document.getElementById('proj-desc').textContent = project.longDescription;
+
+            // Load bullet features
+            const featuresList = document.getElementById('proj-features');
+            featuresList.innerHTML = '';
+            if (project.features && project.features.length > 0) {
+                project.features.forEach(feat => {
+                    const li = document.createElement('li');
+                    li.textContent = feat;
+                    featuresList.appendChild(li);
+                });
+            }
+
+            // Load tech stack badges
+            const stackContainer = document.getElementById('proj-stack');
+            stackContainer.innerHTML = '';
+            if (project.techStack && project.techStack.length > 0) {
+                project.techStack.forEach(tech => {
+                    const span = document.createElement('span');
+                    span.className = 'stack-badge';
+                    span.textContent = tech;
+                    stackContainer.appendChild(span);
+                });
+            }
+
+            // Load thumbnails gallery
+            const gallery = document.getElementById('proj-gallery');
+            gallery.innerHTML = '';
+            
+            // Filter out screenshots that are the same as the main image to prevent duplicates
+            const uniqueScreenshots = (project.screenshots || []).filter(screenshot => screenshot !== project.image);
+
+            if (uniqueScreenshots.length > 0) {
+                gallery.style.display = 'grid'; // Ensure gallery is visible if screenshots exist
+                uniqueScreenshots.forEach(screenshot => {
+                    const div = document.createElement('div');
+                    div.className = 'gallery-thumb';
+                    div.innerHTML = `<img src="${screenshot}" alt="${project.title} screenshot">`;
+                    
+                    // Click handler to swap main image
+                    div.addEventListener('click', () => {
+                        mainImg.style.opacity = '0';
+                        setTimeout(() => {
+                            mainImg.src = screenshot;
+                            mainImg.style.opacity = '1';
+                        }, 200);
+                    });
+
+                    gallery.appendChild(div);
+                });
+            } else {
+                gallery.style.display = 'none'; // Hide gallery container if empty
+            }
+
+            // Display contents smoothly
+            detailContainer.style.display = 'block';
+            detailContainer.classList.add('animate__animated', 'animate__fadeIn');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JV Vigneesh - All Projects" />
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>JV Vigneesh - All Projects</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo"><span class="gradient-text">VV</span>J.</a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#resume" class="nav-link">Resume</a></li>
+                    <li><a href="index.html#projects" class="nav-link active">Projects</a></li>
+                    <li><a href="index.html#work" class="nav-link">Work</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="projects" style="padding-top: 150px; min-height: 80vh;">
+        <div class="projects-container">
+            <div class="projects-header animate__animated animate__fadeIn">
+                <div class="projects-title-block">
+                    <p class="sub-title">03 — Projects</p>
+                    <h2 class="title">All <span class="gradient-text">work.</span></h2>
+                </div>
+                <p class="projects-description-block">
+                    A comprehensive archive of all my projects across web, AI, DevOps and engineering.
+                </p>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+            
+            <div class="projects-action animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <a href="index.html" class="btn btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center;">
+                    <i class='bx bx-left-arrow-alt' style="vertical-align: middle; margin-right: 6px; font-size: 1.2rem;"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div>&copy; 2026 JV Vigneesh. Crafted with obsession.</div>
+            <div class="footer-version">v2026.5 &middot; designed &amp; built from scratch</div>
+        </div>
+    </footer>
+
+    <script src="projects-data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,270 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatiable" content="IE-edge">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>Vigneesh JV</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/11ec34a7d3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>    
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3914853986034661"
-     crossorigin="anonymous"></script>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JV Vigneesh - Personal Portfolio Website" />
+    <link rel="stylesheet" href="style.css?v=3" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>JV Vigneesh - Developer Portfolio</title>
 </head>
+
 <body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="images/logo 1.png" class="logo">
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff;" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-ellipsis" style="color: #ffffff;" onclick="openmenu()"></i>
-            
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#home" class="logo"><span class="gradient-text">VV</span>J.</a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#resume" class="nav-link">Resume</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#work" class="nav-link">Work</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
         </nav>
-        <div class="header-text">
-            <p>Gamer, YouTuber, Label Designer & More</p>
-            <h1>Hi, I'm <span>Vigneesh</span> JV <br></h1>
-        </div>
-    </div>
-</div>      
-<!-- ----------------about----------------- -->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="images/Profile 1.jpg.png">
-            </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About me</h1>
-                <p class="sub-title-text">Hello there, I'm Vigneesh JV, a dedicated and enthusiastic individual who recently completed a fulfilling journey to earn my Bachelor of Technology degree in Mechanical Engineering. Passionate about technology and its boundless applications, I'm eager to share my experiences and showcase the skills I've cultivated during my academic endeavors.</p>
+    </header>
 
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('projects')">Projects</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
-                    <!---<p class="tab-links" onclick="opentab('#profiency')">Profiency</p>-->
+    <section class="banner" id="home">
+        <div class="hero-box">
+
+            <h1 class="hero-title animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">Hi, I'm <span
+                    class="gradient-text">JV Vigneesh</span></h1>
+            <div id="typed-strings" style="display: none;">
+                <p>Gamer</p>
+                <p>YouTuber</p>
+                <p>Designer</p>
+                <p>Web Developer</p>
+                <p>Mechanical Graduate</p>
+                <p>M.Tech CSE Student</p>
+            </div>
+            <div class="hero-subtitle animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">I'm a <span
+                    id="typed" class="subtitle-highlight"></span></div>
+            <p class="hero-description animate__animated animate__fadeInUp" style="animation-delay: 0.35s;">B.Tech
+                Mechanical Engineer turned full-stack developer, currently pursuing my
+                MTech in Computer Science & Engineering. I design futuristic interfaces, build robust web experiences,
+                and create content for the next generation of the internet.</p>
+
+            <div class="hero-buttons animate__animated animate__fadeInUp" style="animation-delay: 0.5s;">
+                <a href="#contact" class="btn btn-primary">Hire Me <i class='bx bx-right-arrow-alt'></i></a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+
+            <div class="hero-stats animate__animated animate__fadeInUp" style="animation-delay: 0.65s;">
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Years Creating</p>
                 </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>JAVA Full Stack</span><br>Currently Learning JAVA Full Stack Course</li>
-                        <li><span>Corel Draw Graphics Suite</span><br>Graphic Designing,Label Designing,etc</li>
-                        <li><span>Desktop & Laptop Installations</span><br>Software & Hardware Installations, Assembly,etc</li>
-                        <li><span>Auto CAD</span><br>Auto CAD Designing of diffrent obbjects/material</li>
-                        <li><span>Adobe Photoshop</span><br>Basic Photo Editing using Canva, Adobe, LunaPic,etc</li>
-                        <li><span>Video Editing</span><br>Basic Video Editing in Wondershare</li>
-                        <li><span>Python</span><br>Python Basics</li>
-                        <li><span>More To Be Learned</span><br>JAVA, Python, SQL, etc</li>
-                    </ul>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>Projects</p>
                 </div>
-                <div class="tab-contents" id="projects">
-                    <ul>
-                        <li><span>Diploma Project</span><br>3D Printer</li>
-                        <li><span>BTech Project</span><br>Wireless Controlled Robotic Arm</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>Class 1-10 </span><br>Dilsukhnagar Public School</li>
-                        <li><span>Diploma in Mech Engg</span><br>TRR College of Technology</li>
-                        <li><span>BTech in Mech Engg</span><br>Swami Vivekananda Institute of Technology</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="profiency">
-                    <ul>
-                        <li><span>Proficiency</span><br>I'm working on Graphic Designing of Labels, Cards,etc.</li>
-                        <li>Also on the side I'm working for Desktop & Laptop Installations</li>
-                    </ul>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <h3>∞</h3>
+                    <p>Cups of Coffee</p>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!---------------services---------------->
-<div id="services">
-    <div class="container">
-        <h1 class="sub-title">My Services</h1>
-        <div class="services-list">
-            <div>
-                <i class="fa-solid fa-wand-magic-sparkles"></i> <!---icon--->
-                <h2 class="title-text">Graphic Designing</h2>
-                <p>I use Corel Draw Graphic Suite to make Designs</p>
-                
-            </div>
-            <div>
-                <i class="fa-solid fa-swatchbook"></i> <!---icon--->
-                <h2 class="title-text">Label Designing</h2>
-                <p>I use Corel Draw Graphic Suite to make Label Designs,etc</p>
-                
-            </div>
-            <div>
-                <i class="fa-solid fa-desktop"></i> <!---icon--->
-                <h2 class="title-text">Desktop & Hardware Installations</h2>
-                <p>I can work on Desktop & Hardware installations according to your need</p>
-                
-            </div>
-        </div>
-    </div>
-</div>
-<!---------------portfolio-------------->
-<div id="portfolio">
-    <div class="container">
-        <h1 class="sub-title">My Work</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/YT Logo.png">
-                <div class="layer">
-                    <h3>YouTube</h3>
-                    <p>Havco Gaming YT</p>
-                    <a href="https://www.youtube.com/@havocgamingyt25"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </section>
+
+
+    <!-- <<<< About Section >>>> -->
+    <section id="about">
+        <div class="about-container">
+            <p class="sub-title">01 — About</p>
+            <h2 class="title">Engineer by training. <br> <span class="gradient-text">Creator by obsession.</span></h2>
+
+            <div class="about-row">
+                <div class="about-col-1">
+
+                </div>
+                <div class="about-col-2">
+                    <p class="sub-title-text">I'm a B.Tech Mechanical Engineering graduate currently pursuing my MTech
+                        in Computer Science & Engineering — bridging hardware intuition with software craft. I ship web
+                        products, design brand systems, and stream the journey on YouTube.</p>
+                    <p class="sub-title-text">When I'm not building, you'll find me fixing PCs or cooking some
+                        designs.</p>
+
+                    <div class="info-cards-grid">
+                        <div class="info-card">
+                            <p class="card-label">PURSUING</p>
+                            <p class="card-text">M.Tech in Computer Science</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="card-label">EDUCATION</p>
+                            <p class="card-text">B.Tech Mechanical Engineering</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="card-label">CURRENTLY</p>
+                            <p class="card-text">Hacking my way through MTech</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="card-label">BUILDING</p>
+                            <p class="card-text">Projects</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="card-label">DESIGNING</p>
+                            <p class="card-text">Brands & Visual Identity</p>
+                        </div>
+                        <div class="info-card">
+                            <p class="card-label">BASED IN</p>
+                            <p class="card-text">India - Remote Worldwide</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/CorelDRAW.png">
-                <div class="layer">
-                    <h3>Corel Draw</h3>
-                    <p>Label Designs</p>
-                    <a href="#Corel Draw Works"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+        </div>
+    </section>
+
+    <section id="resume">
+        <div class="resume-container">
+            <div class="resume-header">
+                <div>
+                    <p class="sub-title">02 — RESUME</p>
+                    <h2 class="title">A timeline of <br> <span class="gradient-text">curiosity.</span></h2>
+                </div>
+                <a href="#" class="btn btn-primary" download>
+                    <i class="bx bx-download"></i> Download Resume
+                </a>
+            </div>
+
+            <div class="timeline-wrapper">
+                <!-- Left - Study -->
+                <div class="timeline-section study">
+                    <h3 class="timeline-label">STUDY</h3>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2025 — PRESENT</p>
+                            <h4>M.Tech — Computer Science</h4>
+                            <p class="timeline-subtitle">Currently Pursuing</p>
+                            <p class="timeline-desc">Advanced coursework in AI, ML, Cybersecurity and modern
+                                development.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2024</p>
+                            <h4>JAVA Full Stack Program</h4>
+                            <p class="timeline-subtitle">Continuous Learning</p>
+                            <p class="timeline-desc">Learned Spring Boot, REST APIs, MySQL, and enterprise-grade backend
+                                architecture.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2020 — 2024</p>
+                            <h4>B.Tech — Mechanical Engineering</h4>
+                            <p class="timeline-subtitle">College Graduate</p>
+                            <p class="timeline-desc">Robotics, CAD, prototyping — including a 5-DOF robotic arm
+                                capstone.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2017 — 2020</p>
+                            <h4>Diploma — Mechanical Engineering</h4>
+                            <p class="timeline-subtitle">Polytechnic Graduate</p>
+                            <p class="timeline-desc">CAD, prototyping — including a 3D Printer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center - Skills & Stack -->
+                <div class="timeline-center">
+                    <div class="skills-box">
+                        <h3>Skills & Stack</h3>
+
+                        <div class="skills-category">
+                            <h4>Web Development</h4>
+                            <p>Frontend, Backend, Full-stack</p>
+                        </div>
+
+                        <div class="skills-category">
+                            <h4>UI / UX & Graphic Design</h4>
+                            <p>CorelDraw, Photoshop</p>
+                        </div>
+
+                        <div class="skills-category">
+                            <h4>JAVA Full Stack</h4>
+                            <p>Spring Boot, Microservices</p>
+                        </div>
+
+                        <div class="skills-category">
+                            <h4>Cybersecurity Fundamentals</h4>
+                            <p>Network Security, Encryption</p>
+                        </div>
+
+                        <div class="skills-category">
+                            <h4>AI / Cloud (AWS - Gemini API)</h4>
+                            <p>Cloud services, ML basics</p>
+                        </div>
+
+                        <div class="tech-stack">
+                            <div class="tech-row">
+                                <span>Java</span>
+                                <span>Python</span>
+                                <span>React</span>
+                            </div>
+                            <div class="tech-row">
+                                <span>TS</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                            <div class="tech-row">
+                                <span>JS</span>
+                                <span>MySQL</span>
+                                <span>Power BI</span>
+                            </div>
+                            <div class="tech-row">
+                                <span>Tomcat</span>
+                                <span>AWS</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right - Work -->
+                <div class="timeline-section work">
+                    <h3 class="timeline-label">WORK</h3>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2024 — PRESENT</p>
+                            <h4>Freelance Web Developer & Designer</h4>
+                            <p class="timeline-subtitle">Self-employed</p>
+                            <p class="timeline-desc">Building modern web experiences and brand systems for startups and
+                                creators.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2025 — PRESENT</p>
+                            <h4>Building — Accounting App</h4>
+                            <p class="timeline-subtitle">Personal Project</p>
+                            <p class="timeline-desc">Currently shipping a full-stack accounting platform with React +
+                                modern web tooling.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2020 — PRESENT</p>
+                            <h4>Content Creator</h4>
+                            <p class="timeline-subtitle">YouTube - Social Media</p>
+                            <p class="timeline-desc">Tech, gaming, and tutorials reaching a community of thousands.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <p class="timeline-date">2022 — PRESENT</p>
+                            <h4>Graphics Designer</h4>
+                            <p class="timeline-subtitle">Self-employed</p>
+                            <p class="timeline-desc">Branding, Posters, Social Media Posts, Thumbnails & etc.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/PC Build.png">
-                <div class="layer">
-                    <h3>PC Building</h3>
-                    <p>Computer Builds, Installations, etc</p>
-                    <a href="#contact"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="projects-container">
+            <div class="projects-header">
+                <div class="projects-title-block">
+                    <p class="sub-title">03 — Projects</p>
+                    <h2 class="title">Selected <span class="gradient-text">work.</span></h2>
+                </div>
+                <p class="projects-description-block">
+                    Projects across web, AI, DevOps and engineering — each one an experiment in shipping fast without
+                    sacrificing craft.
+                </p>
+            </div>
+
+            <div class="projects-grid" id="projects-grid">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+
+            <div class="projects-action">
+                <button class="btn btn-secondary" id="view-all-btn">
+                    View All Projects <i class='bx bx-right-arrow-alt'
+                        style="vertical-align: middle; margin-left: 6px; font-size: 1.2rem;"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- <<<< Work Section >>>> -->
+    <section id="work" style="padding: 60px 40px; position: relative;">
+        <div class="projects-container">
+            <div class="projects-header">
+                <div class="projects-title-block">
+                    <p class="sub-title">04 — WHAT I DO</p>
+                    <h2 class="title">Beyond the <span class="gradient-text"
+                            style="color: var(--primary-color); -webkit-text-fill-color: var(--primary-color);">screen.</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="work-grid">
+                <!-- Card 1: YouTube -->
+                <div class="work-card">
+                    <div class="work-image-wrapper">
+                        <img src="assets/images/havoc-gaming-yt.png" alt="YouTube Channel">
+                        <div class="work-icon">
+                            <i class='bx bxl-youtube'></i>
+                        </div>
+                    </div>
+                    <div class="work-card-content">
+                        <h3 class="work-card-title">YouTube Channel</h3>
+                        <p class="work-card-desc">Tech · Gaming · Tutorials</p>
+                        <a href="https://youtube.com" target="_blank" class="work-card-link">Explore <i
+                                class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Graphic Design -->
+                <div class="work-card">
+                    <div class="work-image-wrapper">
+                        <img src="assets/images/coreldraw.png" alt="Graphic Design">
+                        <div class="work-icon">
+                            <i class='bx bx-palette'></i>
+                        </div>
+                    </div>
+                    <div class="work-card-content">
+                        <h3 class="work-card-title">Graphic Design</h3>
+                        <p class="work-card-desc">Branding · Posters · Social</p>
+                        <a href="#contact" class="work-card-link">Explore <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3: PC Building -->
+                <div class="work-card">
+                    <div class="work-image-wrapper">
+                        <img src="assets/images/pc-build.png" alt="PC Building">
+                        <div class="work-icon">
+                            <i class='bx bx-desktop'></i>
+                        </div>
+                    </div>
+                    <div class="work-card-content">
+                        <h3 class="work-card-title">PC Building & Repairs</h3>
+                        <p class="work-card-desc">Custom builds · Diagnostics · Upgrades · Repairs</p>
+                        <a href="#contact" class="work-card-link">Explore <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <!--<a href="#" class="btn">See More</a>-->
-    </div>
-</div>
+    </section>
 
-
-<!---------------image-slider-------------->
-<div id="Corel Draw Works">
-    <div class="container1">
-    <!-- Slider main container -->
-        <div class="swiper">
-    <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-    <!-- Slides -->
-                <div class="swiper-slide"><img src="images/27281.jpg"></div>
-                <div class="swiper-slide"><img src="images/27282.jpg"></div>
-                <div class="swiper-slide"><img src="images/27281.jpg"></div>
-                <div class="swiper-slide"><img src="images/27282.jpg"></div>                
-            </div>
-    <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-  
-    <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-  
-
+    <!-- <<<< Social Links >>>> -->
+    <section class="social-section" style="padding: 40px 0 20px 0; text-align: center;">
+        <p class="social-label"
+            style="font-size: 10px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.3); margin-bottom: 20px; text-transform: uppercase;">
+            Find Me Online</p>
+        <div class="social-icons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <a href="https://github.com/JV-Vigneesh" target="_blank" class="social-icon" aria-label="GitHub"><i
+                    class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/jv-vigneesh/" target="_blank" class="social-icon"
+                aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.youtube.com/@havocgamingyt25" target="_blank" class="social-icon"
+                aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+            <a href="https://steamcommunity.com/id/HavocGamingYT" target="_blank" class="social-icon"
+                aria-label="Steam"><i class='bx bxl-steam'></i></a>
+            <a href="https://discord.gg/ZkffwFTQm" target="_blank" class="social-icon" aria-label="Discord"><i
+                    class='bx bxl-discord'></i></a>
+            <a href="http://t.me/havocking25" target="_blank" class="social-icon" aria-label="Telegram"><i
+                    class='bx bxl-telegram'></i></a>
+            <a href="https://www.instagram.com/vigneeshjv/" target="_blank" class="social-icon"
+                aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a href="#contact" target="_blank" class="social-icon" aria-label="Email"><i class='bx bx-envelope'></i></a>
+            <a href="https://x.com/Vigneesh_25" target="_blank" class="social-icon" aria-label="Twitter"><i
+                    class='bx bxl-twitter'></i></a>
         </div>
-    </div>
-</div>
+    </section>
 
-
-<!--------------contact------------------->
-<div id="contact">
-    <div class="container">
-        <div class="row">
+    <!-- <<<< Contact Section >>>> -->
+    <section id="contact" style="padding: 80px 40px; position: relative;">
+        <div class="contact-container">
             <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-paper-plane"></i> vsgana25@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> (+91) 8*****9192</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/vigneesh25"><i class="fa-brands fa-facebook-f"></i></a> <!---Instert Links at href=""---->
-                    <a href="https://twitter.com/Vigneesh_25"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/vigneeshjv"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/VigneeshJV"><i class="fa-brands fa-github"></i></a>
+                <p class="sub-title">05 — CONTACT</p>
+                <h2 class="title">Let's build<br><span class="gradient-text"
+                        style="color: var(--primary-color); -webkit-text-fill-color: var(--primary-color);">something
+                        bold.</span></h2>
+                <p class="contact-desc">Have a project, idea, or just want to chat? Drop a message. I'd love to connect.
+                </p>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class='bx bx-envelope'></i>
+                        <span>Will Update Soon</span>
+                    </div>
+                    <div class="info-item">
+                        <i class='bx bx-map'></i>
+                        <span>Hyderabad, Telangana</span>
+                    </div>
                 </div>
-                <!----<a href="" download class="btn btn2">Download CV</a> <!--------------------CV RESUME UPLOAD------------------>
             </div>
-            <!----<div class="contact-right">
-                <form>
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
+
+            <div class="contact-right">
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Project Inquiry" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">Send Message <i
+                            class='bx bx-right-arrow-alt'></i></button>
                 </form>
-            </div>------>    
+            </div>
         </div>
-    </div>
-    <div class="copyright">
-        <p>Copyright © Vigneesh JV</p>
-    </div>
-</div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div>&copy; 2026 JV Vigneesh. Crafted with obsession.</div>
+            <div class="footer-version">v2026.5 · designed & built from scratch</div>
+        </div>
+    </footer>
 
-
-
-
-
-
-
-<script>
-
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-   
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-    
-</script>
-<script>
-
-    var sidemenu = document.getElementById("sidemenu");
-
-    function openmenu(){
-        sidemenu.style.right = "0";
-    }
-    function closemenu(){
-        sidemenu.style.right = "-200px";
-    }
-
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-<script>
-    const swiper = new Swiper('.swiper', {
-        autoplay: {
-            delay: 3000,
-            disabledOnInteraction: false,
-        },
-  loop: true,
-
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-});
-</script>
-
-
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="projects-data.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
