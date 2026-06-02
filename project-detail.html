@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <script type="text/javascript">
         // SPA URL rewriter for GitHub Pages
-        (function() {
+        (function () {
             var urlParams = new URLSearchParams(window.location.search);
             var projectId = urlParams.get('id');
             var isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
@@ -307,7 +307,8 @@
         }
 
         .features-list li::before {
-            content: "\eab2"; /* Boxicons check-circle icon unicode */
+            content: "\eab2";
+            /* Boxicons check-circle icon unicode */
             font-family: 'boxicons' !important;
             position: absolute;
             left: 0;
@@ -437,7 +438,7 @@
     <!-- Main Detail Content -->
     <main class="detail-container">
         <!-- Back Link -->
-        <a href="index.html#projects" class="back-link">
+        <a href="projects.html" class="back-link">
             <i class='bx bx-left-arrow-alt'></i> Back to Projects
         </a>
 
@@ -521,7 +522,8 @@
         <div id="project-error-content" class="error-panel animate__animated animate__fadeIn" style="display: none;">
             <i class='bx bx-error-alt'></i>
             <h2>Project Not Found</h2>
-            <p>The project you are looking for doesn't exist, has been archived, or was moved. Let's get you back on track!</p>
+            <p>The project you are looking for doesn't exist, has been archived, or was moved. Let's get you back on
+                track!</p>
             <a href="index.html#projects" class="btn btn-primary">
                 Return to Portfolio
             </a>
@@ -529,8 +531,10 @@
     </main>
 
     <!-- Simple Footer -->
-    <footer class="footer" style="margin-top: 80px; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 40px; padding-bottom: 40px;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.5);">
+    <footer class="footer"
+        style="margin-top: 80px; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 40px; padding-bottom: 40px;">
+        <div class="container"
+            style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; font-size: 14px; color: rgba(255, 255, 255, 0.5);">
             <p>&copy; 2026 JV Vigneesh. Crafted with obsession.</p>
             <p>v2026.5 · designed & built from scratch</p>
         </div>
@@ -644,7 +648,7 @@
             // Load thumbnails gallery
             const gallery = document.getElementById('proj-gallery');
             gallery.innerHTML = '';
-            
+
             // Filter out screenshots that are the same as the main image to prevent duplicates
             const uniqueScreenshots = (project.screenshots || []).filter(screenshot => screenshot !== project.image);
 
@@ -654,7 +658,7 @@
                     const div = document.createElement('div');
                     div.className = 'gallery-thumb';
                     div.innerHTML = `<img src="${screenshot}" alt="${project.title} screenshot">`;
-                    
+
                     // Click handler to swap main image
                     div.addEventListener('click', () => {
                         mainImg.style.opacity = '0';

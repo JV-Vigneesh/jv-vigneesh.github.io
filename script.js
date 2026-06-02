@@ -261,7 +261,7 @@ function initProjectsSystem() {
         <div class="project-card-content">
           <h3 class="project-card-title">${project.title}</h3>
           <p class="project-card-desc">${project.shortDescription}</p>
-          <a href="project-detail.html?id=${project.id}" class="project-card-link">
+          <a href="${getPathPrefix()}/project-detail.html?id=${project.id}" class="project-card-link">
             Explore more <i class='bx bx-right-arrow-alt' style="vertical-align: middle; margin-left: 4px; font-size: 1.1rem; transition: transform 0.3s ease;"></i>
           </a>
         </div>
@@ -282,7 +282,7 @@ function initProjectsSystem() {
   // Bind view all click on homepage
   if (viewAllBtn && !isAllProjectsPage) {
     viewAllBtn.addEventListener('click', () => {
-        window.location.href = 'projects.html';
+        window.location.href = getPathPrefix() + '/projects.html';
     });
   }
 
