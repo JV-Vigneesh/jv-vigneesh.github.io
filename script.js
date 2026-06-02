@@ -1,7 +1,8 @@
+
+
 // Header scroll animation
 function initHeaderScroll() {
   const header = document.querySelector('.header');
-  const banner = document.querySelector('.banner');
 
   if (!header) return;
 
@@ -361,6 +362,44 @@ function initContactForm() {
   });
 }
 
+// Mobile menu navigation toggle
+function initMobileMenu() {
+  const menuIcon = document.getElementById('menu-icon');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (!menuIcon || !navMenu) return;
+
+  menuIcon.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    if (navMenu.classList.contains('active')) {
+      menuIcon.classList.remove('bx-menu');
+      menuIcon.classList.add('bx-x');
+    } else {
+      menuIcon.classList.remove('bx-x');
+      menuIcon.classList.add('bx-menu');
+    }
+  });
+
+  // Close menu when clicking a link
+  const navLinks = navMenu.querySelectorAll('a.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      menuIcon.classList.remove('bx-x');
+      menuIcon.classList.add('bx-menu');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !menuIcon.contains(e.target)) {
+      navMenu.classList.remove('active');
+      menuIcon.classList.remove('bx-x');
+      menuIcon.classList.add('bx-menu');
+    }
+  });
+}
+
 // Master Initialization on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
@@ -369,4 +408,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();   // Scan elements and initialize reveal observer
   initTypewriter();
   initContactForm();
+  initMobileMenu();
 });

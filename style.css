@@ -25,6 +25,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -34,6 +36,7 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    width: 100%;
 }
 
 body::before {
@@ -59,9 +62,11 @@ section {
 .header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
     background: transparent;
+    border-bottom: 1px solid transparent;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -166,13 +171,14 @@ section {
 .banner {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: url(assets/images/Background.jpg);
     background-size: cover;
     background-position: left;
     background-repeat: no-repeat;
     display: flex;
     align-items: flex-end;
+    transition: background-position 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .banner::before {
@@ -401,12 +407,20 @@ section {
     }
 
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
+        gap: 12px;
     }
 
-    .btn {
-        width: 100%;
+    .hero-buttons .btn {
+        flex: 1;
+        padding: 12px 10px;
+        font-size: 14px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        white-space: nowrap;
     }
 
     .hero-description {
@@ -415,9 +429,21 @@ section {
     }
 
     .hero-stats {
-        flex-direction: column;
-        gap: 30px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
         margin-bottom: 40px;
+    }
+
+    .hero-stats .stat-item h3 {
+        font-size: 20px;
+    }
+
+    .hero-stats .stat-item p {
+        font-size: 9px;
+        letter-spacing: 1px;
     }
 }
 
@@ -676,7 +702,7 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 24px 30px;
     border-radius: 24px;
-    width: 200px;
+    width: 100%;
 }
 
 .timeline-date {
@@ -1538,7 +1564,7 @@ section {
     border: 1px solid rgba(255, 21, 119, 0.3);
     border-radius: 16px;
     padding: 16px 24px;
-    box-shadow: 
+    box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.4),
         0 0 30px rgba(255, 21, 119, 0.15);
     transform: translateY(50px);
@@ -1582,8 +1608,208 @@ section {
         right: 20px;
         left: 20px;
     }
-    
+
     .toast-notification {
         max-width: 100%;
+    }
+}
+
+/* ============================================
+   RESPONSIVENESS AND MOBILE ENHANCEMENTS
+   ============================================ */
+
+/* 1. Global Layout Containers & Section Padding */
+@media (max-width: 1024px) {
+
+    .about-container,
+    .resume-container,
+    .projects-container,
+    .contact-container {
+        max-width: 90%;
+    }
+
+    .hero-box {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .about-container,
+    .resume-container,
+    .projects-container,
+    .contact-container {
+        max-width: 92%;
+    }
+
+    .hero-box {
+        width: 100%;
+    }
+
+    #about,
+    #resume {
+        padding: 60px 20px !important;
+    }
+
+    #projects {
+        padding: 60px 20px;
+    }
+
+    #work,
+    #contact {
+        padding: 50px 20px !important;
+    }
+
+    .resume-container {
+        padding: 30px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .about-container,
+    .resume-container,
+    .projects-container,
+    .contact-container {
+        max-width: 95%;
+    }
+
+    #about,
+    #resume {
+        padding: 40px 16px !important;
+    }
+
+    #projects {
+        padding: 40px 16px;
+    }
+
+    #work,
+    #contact {
+        padding: 40px 16px !important;
+    }
+}
+
+@media (max-width: 1360px) {
+    .banner {
+        background-position: center;
+    }
+}
+
+/* 2. Navigation Hamburger Menu & Slide-In Drawer */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1.5rem 0;
+    }
+
+    .header.scrolled .navbar {
+        padding: 1rem 0;
+    }
+
+    #menu-icon {
+        display: block;
+        z-index: 1001;
+        /* Must sit above drawer */
+        font-size: 2.2rem;
+        transition: transform 0.4s ease, color 0.4s ease;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(10, 5, 8, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(255, 21, 119, 0.15);
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        padding: 50px 30px;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 35px rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        margin: 0;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 12px 0;
+        letter-spacing: 1px;
+    }
+
+    .nav-link::after {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 50%;
+    }
+
+    /* Bottom-align layout & clear fixed navbar spacing on tablet/mobile screens */
+    .banner {
+        align-items: flex-end;
+        padding-top: 120px;
+        padding-bottom: 50px;
+    }
+
+    .hero-box {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+}
+
+/* 3. About Section Profile Image Collapse & Spacing */
+@media (max-width: 1024px) {
+    .about-col-1 {
+        flex-basis: 100%;
+        height: 380px;
+        /* Force image box height on stack */
+        margin-bottom: 40px;
+        /* Space before bio columns */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-col-1 {
+        height: 280px;
+        /* Tighter aspect ratio for small mobiles */
+        margin-bottom: 30px;
+    }
+}
+
+/* 4. Timeline Center Column Sticky Position Reset */
+@media (max-width: 768px) {
+    .timeline-center {
+        position: static;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .skills-box {
+        width: 100%;
+        max-height: none;
+    }
+}
+
+/* 5. Hero Stats Dividers vertical on mobile row */
+@media (max-width: 768px) {
+    .stat-divider {
+        width: 1px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 0;
     }
 }

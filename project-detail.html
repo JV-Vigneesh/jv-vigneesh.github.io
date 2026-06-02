@@ -392,6 +392,12 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+
+        @media (max-width: 480px) {
+            .screenshots-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -401,6 +407,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <a href="index.html#home" class="logo"><span class="gradient-text">VV</span>J.</a>
+                <div class="bx bx-menu" id="menu-icon"></div>
                 <ul class="nav-menu">
                     <li><a href="index.html#home" class="nav-link">Home</a></li>
                     <li><a href="index.html#about" class="nav-link">About</a></li>
@@ -417,7 +424,7 @@
     <main class="detail-container">
         <!-- Back Link -->
         <a href="index.html#projects" class="back-link">
-            <i class='bx bx-left-arrow-alt'></i> Back to Selected Work
+            <i class='bx bx-left-arrow-alt'></i> Back to Projects
         </a>
 
         <!-- Dynamically Loaded Content Area -->
@@ -522,6 +529,15 @@
         document.addEventListener('DOMContentLoaded', () => {
             const detailContainer = document.getElementById('project-detail-content');
             const errorContainer = document.getElementById('project-error-content');
+
+            // Smart Back Navigation
+            const backLink = document.querySelector('.back-link');
+            if (backLink && document.referrer && (document.referrer.includes('projects.html') || document.referrer.includes('index.html'))) {
+                backLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.history.back();
+                });
+            }
 
             // Parse project ID from URL parameters
             const urlParams = new URLSearchParams(window.location.search);
