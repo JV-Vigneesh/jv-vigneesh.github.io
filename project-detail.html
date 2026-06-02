@@ -553,9 +553,16 @@
                 });
             }
 
-            // Parse project ID from URL parameters
+            // Parse project ID from URL parameters or fallback to the pathname segment
             const urlParams = new URLSearchParams(window.location.search);
-            const projectId = urlParams.get('id');
+            let projectId = urlParams.get('id');
+            if (!projectId) {
+                const pathSegments = window.location.pathname.replace(/^\/|\/$/g, '').split('/');
+                const lastSegment = pathSegments[pathSegments.length - 1];
+                if (lastSegment && lastSegment !== 'project-detail.html') {
+                    projectId = lastSegment;
+                }
+            }
 
             if (!projectId) {
                 errorContainer.style.display = 'block';
