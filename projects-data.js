@@ -11,7 +11,7 @@ const projectsData = [
     shortDescription: "Multi-page company website built with HTML, CSS & JS — deployed on GoDaddy with cPanel.",
     longDescription: "Gen Agritech is a professional multi-page agricultural technology website built from the ground up for a modern farming and agri-tech innovation firm. Focused on visual storytelling, high performance, and absolute ease of navigation, the website serves as the primary digital interface for clients looking to explore advanced farming solutions, consulting services, and sustainable agriculture products.",
     role: "Lead Full-Stack Developer",
-    duration: "3 Months (2024)",
+    duration: "4 Months (2025)",
     techStack: ["HTML5", "CSS3", "JavaScript", "cPanel", "GoDaddy Hosting", "SEO Optimization"],
     features: [
       "Highly responsive layouts tailored for mobile, tablet, and desktop viewports",
@@ -36,8 +36,8 @@ const projectsData = [
     shortDescription: "Designed and currently maintaining a multi-page organics business website.",
     longDescription: "Naturezone Organics is a highly-aesthetic farm-to-table organic food and agricultural product showcase designed to promote sustainable lifestyle choices and premium organic farming. In addition to high-fidelity frontend execution, this project represents an ongoing maintenance engagement, overseeing regular updates, database checks, user flow enhancements, and visual identity styling.",
     role: "UI/UX Designer & Web Administrator",
-    duration: "Ongoing Maintenance (Started 2024)",
-    techStack: ["HTML5", "Vanilla CSS", "JavaScript", "Database Management", "SEO", "Graphic Design"],
+    duration: "Ongoing Maintenance (Started 2025)",
+    techStack: ["HTML5", "Vanilla CSS", "JavaScript", "Hostinger HPanel", "SEO", "Graphic Design"],
     features: [
       "Immersive organic-themed user interface utilizing vibrant HSL green color palettes",
       "Smooth micro-interactions and transitions enhancing natural user journeys",
@@ -88,7 +88,7 @@ const projectsData = [
     shortDescription: "GitHub governance dashboard auditing repos for branch protection & tagging compliance.",
     longDescription: "RepoGuard is an advanced DevOps compliance dashboard engineered to provide organization-wide visibility into repository governance. It integrates directly with the GitHub REST API to perform automated security and standard compliance audits across hundreds of repos. Designed specifically for DevOps and Security teams, it streamlines policy enforcement and vulnerability prevention in software development pipelines.",
     role: "DevOps & React Developer",
-    duration: "2 Months (2025)",
+    duration: "2 Months (MTech Project)",
     techStack: ["React", "TypeScript", "TailwindCSS", "GitHub REST API", "Vercel", "DevOps Pipelines"],
     features: [
       "Continuous repository auditing checking for branch protection rule coverage",
@@ -113,7 +113,7 @@ const projectsData = [
     shortDescription: "An AI-powered application leveraging AWS serverless architecture and Gemini models.",
     longDescription: "AI Quiz Master is an enterprise knowledge assistant that harnesses the power of Google's Gemini models and AWS serverless computing to enable instant, context-aware Q&A and quiz generation. Built to eliminate the friction of digging through PDFs, word files, and spreadsheets, users can upload documents and immediately query them with natural language, receiving precise citations and summaries.",
     role: "AI & Serverless Architect",
-    duration: "3 Months (2025)",
+    duration: "3 Months (MTech Project)",
     techStack: ["AWS Lambda", "AWS S3", "DynamoDB", "Gemini 1.5 Pro API", "Python", "React", "Vector Embeddings"],
     features: [
       "Serverless ingestion pipeline converting uploaded documents into optimized vector embeddings",
@@ -138,7 +138,7 @@ const projectsData = [
     shortDescription: "A physical 5-Degree-of-Freedom robotic arm with custom CAD design, prototyping, and inverse kinematics control.",
     longDescription: "Serving as the mechanical engineering capstone project, this physical 5-Degree-of-Freedom (5-DOF) robotic arm bridges heavy physical prototyping with automated software control. Built to perform high-precision pick-and-place maneuvers, the robotic arm features full custom computer-aided design (CAD) chassis parts, 3D printed components, hardware actuation via high-torque servo motors, and a microcontrolled software system running inverse kinematics.",
     role: "Hardware & Kinematics Lead",
-    duration: "6 Months (Capstone 2024)",
+    duration: "6 Months (Capstone 2024 / BTech Project)",
     techStack: ["SolidWorks CAD", "3D Printing & Prototyping", "Arduino C++", "Inverse Kinematics", "Servo Actuation", "Hardware Integration"],
     features: [
       "Rigid structural body designed in SolidWorks and optimized through finite element stress analysis",
