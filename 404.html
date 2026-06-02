@@ -35,14 +35,16 @@
       }
     }
 
+    var hash = window.location.hash || '';
+
     if (segment === 'All-Projects') {
-      window.location.replace(targetUrl + prefix + '/projects.html?p=All-Projects');
+      window.location.replace(targetUrl + prefix + '/projects.html?p=All-Projects' + hash);
     } else if (projectIds.indexOf(segment) !== -1) {
-      window.location.replace(targetUrl + prefix + '/project-detail.html?id=' + segment + '&p=' + segment);
+      window.location.replace(targetUrl + prefix + '/project-detail.html?id=' + segment + '&p=' + segment + hash);
     } else if (['home', 'about', 'resume', 'projects', 'work', 'contact'].indexOf(segment) !== -1) {
-      window.location.replace(targetUrl + prefix + '/index.html?p=' + segment + '#' + segment);
+      window.location.replace(targetUrl + prefix + '/index.html?p=' + segment + (hash || ('#' + segment)));
     } else {
-      window.location.replace(targetUrl + prefix + '/index.html');
+      window.location.replace(targetUrl + prefix + '/index.html' + hash);
     }
   </script>
 </head>

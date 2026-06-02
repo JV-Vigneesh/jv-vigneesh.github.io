@@ -13,12 +13,14 @@
             var prefix = path.substring(0, path.lastIndexOf('/'));
 
             if (cleanPath) {
-                var newUrl = window.location.protocol + '//' + window.location.host + prefix + '/' + cleanPath;
+                var hash = window.location.hash;
+                var newUrl = window.location.protocol + '//' + window.location.host + prefix + '/' + cleanPath + hash;
                 window.history.replaceState(null, null, newUrl);
                 
-                if (['home', 'about', 'resume', 'projects', 'work', 'contact'].indexOf(cleanPath) !== -1) {
+                var targetId = hash ? hash.substring(1) : cleanPath;
+                if (['home', 'about', 'resume', 'projects', 'work', 'contact'].indexOf(targetId) !== -1) {
                     window.addEventListener('DOMContentLoaded', function() {
-                        var target = document.getElementById(cleanPath);
+                        var target = document.getElementById(targetId);
                         if (target) {
                             setTimeout(function() {
                                 target.scrollIntoView({ behavior: 'smooth' });
