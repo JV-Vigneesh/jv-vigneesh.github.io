@@ -3,6 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
+    <script type="text/javascript">
+        // SPA URL rewriter for GitHub Pages
+        (function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var projectId = urlParams.get('id');
+            var isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+            if (projectId && (!isLocalhost || urlParams.get('p'))) {
+                var path = window.location.pathname;
+                var prefix = path.substring(0, path.lastIndexOf('/'));
+                var newUrl = window.location.protocol + '//' + window.location.host + prefix + '/' + projectId;
+                window.history.replaceState(null, null, newUrl);
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="JV Vigneesh - Project Details" />
     <link rel="stylesheet" href="style.css" />
@@ -532,7 +546,7 @@
 
             // Smart Back Navigation
             const backLink = document.querySelector('.back-link');
-            if (backLink && document.referrer && (document.referrer.includes('projects.html') || document.referrer.includes('index.html'))) {
+            if (backLink && document.referrer && document.referrer.includes(window.location.host)) {
                 backLink.addEventListener('click', (e) => {
                     e.preventDefault();
                     window.history.back();

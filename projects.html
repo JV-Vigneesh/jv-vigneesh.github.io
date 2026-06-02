@@ -3,6 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
+    <script type="text/javascript">
+        // SPA URL rewriter for GitHub Pages
+        (function() {
+            var isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+            if (!isLocalhost || new URLSearchParams(window.location.search).get('p') === 'All-Projects') {
+                var path = window.location.pathname;
+                var prefix = path.substring(0, path.lastIndexOf('/'));
+                var newUrl = window.location.protocol + '//' + window.location.host + prefix + '/All-Projects';
+                window.history.replaceState(null, null, newUrl);
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="JV Vigneesh - All Projects" />
     <link rel="stylesheet" href="style.css" />

@@ -3,6 +3,38 @@
 
 <head>
     <meta charset="UTF-8">
+    <script type="text/javascript">
+        // SPA URL rewriter for GitHub Pages
+        (function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var cleanPath = urlParams.get('p');
+            var isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+            var path = window.location.pathname;
+            var prefix = path.substring(0, path.lastIndexOf('/'));
+
+            if (cleanPath) {
+                var newUrl = window.location.protocol + '//' + window.location.host + prefix + '/' + cleanPath;
+                window.history.replaceState(null, null, newUrl);
+                
+                if (['home', 'about', 'resume', 'projects', 'work', 'contact'].indexOf(cleanPath) !== -1) {
+                    window.addEventListener('DOMContentLoaded', function() {
+                        var target = document.getElementById(cleanPath);
+                        if (target) {
+                            setTimeout(function() {
+                                target.scrollIntoView({ behavior: 'smooth' });
+                            }, 100);
+                        }
+                    });
+                }
+            } else if (!isLocalhost) {
+                if (path.endsWith('/') || path.endsWith('/index.html')) {
+                    var cleanPathName = path.endsWith('/index.html') ? path.replace('/index.html', '/home') : (path.endsWith('/') ? path + 'home' : path + '/home');
+                    var newUrl = window.location.protocol + '//' + window.location.host + cleanPathName + window.location.hash;
+                    window.history.replaceState(null, null, newUrl);
+                }
+            }
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="JV Vigneesh - Personal Portfolio Website" />
     <link rel="stylesheet" href="style.css?v=3" />

@@ -1,3 +1,19 @@
+// Helper to get subdirectory prefix dynamically (e.g. /vigneeshjv.github.io or "")
+function getPathPrefix() {
+  const path = window.location.pathname;
+  const prefix = path.substring(0, path.lastIndexOf('/'));
+  if (['/home', '/about', '/resume', '/projects', '/work', '/contact', '/All-Projects'].some(p => path.endsWith(p))) {
+    const segment = path.substring(path.lastIndexOf('/'));
+    return path.substring(0, path.length - segment.length);
+  }
+  if (typeof projectsData !== 'undefined') {
+    const matchedProject = projectsData.find(p => path.endsWith('/' + p.id));
+    if (matchedProject) {
+      return path.substring(0, path.length - matchedProject.id.length - 1);
+    }
+  }
+  return prefix === '/' ? '' : prefix;
+}
 
 
 // Header scroll animation
@@ -30,7 +46,9 @@ function initActiveTabTracker() {
   if (navLinks.length === 0) return;
 
   // Track if we are on homepage
-  const isHomepage = !window.location.pathname.includes('projects.html') && !window.location.pathname.includes('project-detail.html');
+  const isHomepage = window.location.pathname === '/' || 
+                     window.location.pathname.endsWith('/index.html') || 
+                     ['/home', '/about', '/resume', '/projects', '/work', '/contact'].some(p => window.location.pathname.endsWith(p));
 
   if (!isHomepage) {
     // If not homepage, ensure "Projects" is highlighted
@@ -61,6 +79,12 @@ function initActiveTabTracker() {
           const href = link.getAttribute('href');
           if (href === `#${id}` || href.endsWith(`#${id}`)) {
             link.classList.add('active');
+            
+            // Rewrite URL in the address bar to the clean format on scroll
+            const cleanUrl = getPathPrefix() + '/' + id;
+            if (window.location.pathname !== cleanUrl) {
+              window.history.replaceState(null, null, cleanUrl);
+            }
           }
         });
       }
@@ -76,7 +100,13 @@ function initActiveTabTracker() {
     if (window.scrollY < 100) {
       navLinks.forEach(link => link.classList.remove('active'));
       const homeLink = Array.from(navLinks).find(link => link.getAttribute('href') === '#home' || link.getAttribute('href').endsWith('#home'));
-      if (homeLink) homeLink.classList.add('active');
+      if (homeLink) {
+        homeLink.classList.add('active');
+        const cleanUrl = getPathPrefix() + '/home';
+        if (window.location.pathname !== cleanUrl) {
+          window.history.replaceState(null, null, cleanUrl);
+        }
+      }
     }
   });
 }
@@ -192,7 +222,7 @@ function initProjectsSystem() {
   if (!projectsGrid) return;
   
   // Determine if we are on the homepage or the all projects page
-  const isAllProjectsPage = window.location.pathname.includes('projects.html');
+  const isAllProjectsPage = window.location.pathname.includes('projects.html') || window.location.pathname.endsWith('/All-Projects');
 
   // Render Projects
   function renderProjects() {
@@ -400,6 +430,32 @@ function initMobileMenu() {
   });
 }
 
+// Intercept all internal anchor clicks on the homepage to update URL to clean path format
+function initCleanAnchorsRouting() {
+  const isHomepage = window.location.pathname === '/' || 
+                     window.location.pathname.endsWith('/index.html') || 
+                     ['/home', '/about', '/resume', '/projects', '/work', '/contact'].some(p => window.location.pathname.endsWith(p));
+
+  if (!isHomepage) return;
+
+  document.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a');
+    if (!anchor) return;
+
+    const href = anchor.getAttribute('href');
+    if (href && href.startsWith('#') && href.length > 1) {
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+        // Update URL to clean format without hash symbol
+        window.history.pushState(null, null, getPathPrefix() + '/' + targetId);
+      }
+    }
+  });
+}
+
 // Master Initialization on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
@@ -409,4 +465,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initContactForm();
   initMobileMenu();
+  initCleanAnchorsRouting();
 });

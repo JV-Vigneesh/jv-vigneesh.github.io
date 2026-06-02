@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    // List of known project IDs
+    var projectIds = [
+      "gen-agritech",
+      "naturezone-organics",
+      "jvs-fintech",
+      "repoguard",
+      "ai-quiz-master",
+      "robotic-arm"
+    ];
+
+    var path = window.location.pathname;
+    
+    // Trim leading and trailing slashes
+    var cleanPath = path.replace(/^\/|\/$/g, '');
+    
+    // If the path contains multiple segments, get the last segment
+    var segments = cleanPath.split('/');
+    var segment = segments[segments.length - 1];
+
+    var targetUrl = window.location.protocol + '//' + window.location.host;
+    
+    // Preserve any repo name prefix if page is hosted under a subdirectory (e.g., /repo-name/path)
+    var prefix = '';
+    if (segments.length > 1 && segment !== '') {
+      // Check if the first segment is not a project ID or known keyword
+      if (projectIds.indexOf(segments[0]) === -1 && ['All-Projects', 'home', 'about', 'resume', 'projects', 'work', 'contact'].indexOf(segments[0]) === -1) {
+        prefix = '/' + segments.slice(0, -1).join('/');
+      }
+    }
+
+    if (segment === 'All-Projects') {
+      window.location.replace(targetUrl + prefix + '/projects.html?p=All-Projects');
+    } else if (projectIds.indexOf(segment) !== -1) {
+      window.location.replace(targetUrl + prefix + '/project-detail.html?id=' + segment + '&p=' + segment);
+    } else if (['home', 'about', 'resume', 'projects', 'work', 'contact'].indexOf(segment) !== -1) {
+      window.location.replace(targetUrl + prefix + '/index.html?p=' + segment + '#' + segment);
+    } else {
+      window.location.replace(targetUrl + prefix + '/index.html');
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
